@@ -1,3 +1,5 @@
+import { TbTrashX } from 'react-icons/tb';
+
 import React from "react";
 
 function Entries(prop) {
@@ -18,7 +20,7 @@ function Entries(prop) {
     const handleRemove = id => {
         const newEntries = [...prop.entries].filter(entry => entry.id !== id);
         prop.setEntries(newEntries);
-        localStorage.setItem(LSKEY + ".entries", JSON.stringify(newEntries))
+        localStorage.setItem(LSKEY + ".entries", JSON.stringify(newEntries));
     }
 
     return (
@@ -38,7 +40,7 @@ function Entries(prop) {
                         <button 
                             className="deleteButton" 
                                 onClick={() => handleRemove(entry.id)}
-                        >x</button>
+                        ><TbTrashX/></button>
                     </li>
                 ))}
             </ul>

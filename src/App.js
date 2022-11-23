@@ -21,7 +21,7 @@ function App() {
   const [entries, setEntries] = useState(initialEntries);
 
   useEffect(() => {
-    if(entries.length > 1) {
+    if(entries.length > 0) {
   localStorage.setItem(LSKEY + ".entries", JSON.stringify(entries));
     }
   }, [entries]);
@@ -29,10 +29,8 @@ function App() {
   useEffect(() => {
     const saveEntries = JSON.parse(localStorage.getItem(LSKEY 
       + ".entries"));
-    if(saveEntries) {
-      setEntries(saveEntries);
-    }
-  },[])
+      setEntries(saveEntries ?? []);
+  },[]);
 
   console.log(entries);
 

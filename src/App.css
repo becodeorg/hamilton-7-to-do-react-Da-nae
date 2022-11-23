@@ -107,5 +107,6 @@ input:checked + label {
   border-radius: 50%;
   position : absolute;
   z-index: -1;
-  right: 0.2px;
+  right: 3px;
+  top: 1px;
 }
